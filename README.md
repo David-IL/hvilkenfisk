@@ -10,7 +10,7 @@ The algorithm attempting to identify the fish species based on these inputs
 is a deep learning models, where we have performed transfer learning on 
 a selected set of models based on the dataset established.
 
-The site can be found at hvilkenfisk.no and is in Norwegian only.
+The site can be found at [hvilkenfisk.no](hvilkenfisk.no) and is in Norwegian only.
 
 
 ## Data
