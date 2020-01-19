@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <!--<link type="text/css" rel="stylesheet" href="./style.css">-->
+        <link type="text/css" rel="stylesheet" href="./style_horizontal_preds.css">
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145696329-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-145696329-1');
+        </script>
+
+        <title>Hvilken fisk</title>
+    </head>
+    <body>
+        
+        <div class="top">
+            <!--<div class="upload_image">-->
+                <div class="page__title">
+                    Last opp ditt fiskebilde 
+                </div>                
+                <div class="page__date"><span class="page__date--date">%Date%</span></div>
+                
+                <div id="drop-area">
+                    <img id="your_img" src="#" width='90%' alt="Last opp et bilde &nbsp&nbsp"/>  <!--alt="your image"-->
+                    <!--
+                    <form class="my-form" id="my-form">                        
+                        <div id="drop-area-text">
+                            <i>Last opp en bildefil <br>eller dra bildet inn i denne ruta</i>
+                        </div>
+                    </form>
+                    -->
+                </div>        
+                <input type="file" id="fileElem" accept="image/jpeg, image/jpg, image/png" onchange="readImg(this);">                    
+                <label class="button_choose_picture" for="fileElem">Velg bilde</label>                    
+        </div>
+        
+        
+        
+        <div class="bottom">
+            <div class="add">
+                <div class="add__container">
+                    <select class="add_water_type">
+                        <option value="freshwater" selected>Ferskvann</option>
+                        <option value="saltwater">Saltvann</option>
+                    </select>
+                    <input type="number" class="add__length" placeholder="Omtrent lengde i cm">
+                    <input type="number" class="add__weight" placeholder="Omtrent vekt i g">
+                    <!--<button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>-->
+                    <label class="btn_check_species">Sjekk fisk</label>
+                </div>
+            </div>
+            <div id="temporary_message">
+                <i>MERK: Funksjonalitet for faktisk prediksjon av fisk er enda ikke inkludert - her vises
+                    foreløpig et tilfeldig utvalg fisk </i>
+            </div>
+            <!--<h2 class="fish__suggestion__title">Hvilken fisk</h2>-->
+            <div class="container_predictions clearfix">                
+                <!--
+                <div id="${pred_number_text}_prediction">                                       
+                    <center>                                                    
+                    <div class="predicted_fish_title">${fish_obj.Art}</div>
+                    <div class="predicted_fish_prob" id="pred_prob_${pred_number_text}">
+                        ${formatPercentage(probability)}% sannsynlighet
+                    </div>
+                    <div class="pred_table clearfix">
+                        <table>  
+                            <tr>
+                                <td>Familie</td>
+                                <td>${fish_obj.Familie}</td> 
+                            </tr>                                                
+                            <tr>
+                                <td>Latinsk navn</td>
+                                <td><i>${latin_name}</i></td> 
+                            </tr>
+                            <tr>
+                                <td>Lengde</td>
+                                <td>Opptil ${fish_obj.Lengde}cm</td> 
+                            </tr>
+                            <tr>
+                                <td>Vekt</td>
+                                <td>Opptil ${formatWeight(fish_obj.Vekt)}</td> 
+                            </tr>
+                            <tr>
+                                <td>Norgesrekord</td>
+                                <td>${record}</td> 
+                            </tr>
+                            <tr>                            
+                                <td>Lignende arter</td>
+                                <td>${similar_species}</td> 
+                            </tr>
+                        </table>
+                    </div>            
+                            
+                    <div class="fish_image_ref" id="img_ref_${pred_number_text}">                    
+                        <img id="pred_img_${pred_number_text}" src="${img_src}" onclick="window.open('${img_src}', '_blank');">                     
+                    </div>                 
+                    </center>
+                </div>
+                
+                -->       
+            </div>            
+                
+        </div>    
+        <div class="copyright">
+            &copy; by David Volent Lindberg
+        </div>    
+        
+        <script src="app.js"></script>
+    </body>
+</html>

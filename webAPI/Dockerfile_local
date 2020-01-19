@@ -1,0 +1,34 @@
+# NOTE:
+#    - This Dockerfile is not yet complete, it currently mainly mirrors
+#      the darkflow-yolo image that enables running yolo on CPU only, see
+#         https://github.com/davvdg/darkflow-docker
+#    - Update: The dockerfile should also include parts of fastapi docker, see
+#         https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
+#    - This means we have to combine two Dockerfiles, see doc on that here:
+#         https://docs.docker.com/develop/develop-images/multistage-build/
+FROM tensorflow/tensorflow:latest-py3
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+	python-pip \
+	cython \
+	git \
+	libglib2.0-0 \
+	libsm6 \
+	libxext6 \
+	libxrender1 \
+	libfontconfig1 \
+	wget
+
+# Install other Python requirements by pip, including opencv-python
+RUN pip install --upgrade pip
+COPY requirements_tf_image.txt requirements.txt
+RUN pip install -r requirements.txt
+
+# Copy local files to image
+COPY ./app /app
+WORKDIR /app/
+
+#EXPOSE 80
+
+

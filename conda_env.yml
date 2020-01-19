@@ -1,0 +1,24 @@
+name: hvilkenfisk
+channels:
+  - default
+  - conda-forge
+dependencies:  
+  - pip
+  - opencv
+  - keras
+  - tensorflow
+  - lime
+  - scikit-image
+  - h5py
+  - pandas
+  - pytest=3.2.1
+  - pytest-cov=2.5.1
+  - numpy
+  - nbconvert=5.3.1
+  - nbformat=4.4.0
+  - bokeh
+  - ipykernel
+  - matplotlib
+  - seaborn
+  - pip:
+    - pyjstat
